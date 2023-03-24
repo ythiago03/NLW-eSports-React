@@ -7,7 +7,7 @@ export function Section (props) {
             <div>
                     <h2>{props.title}</h2>
                     <p>{props.subTitle}</p>
-                    <ul class="games-list">
+                    <ul className={props.className}>
                        {props.children}
                     </ul>
                 </div>    

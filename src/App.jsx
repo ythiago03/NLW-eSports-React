@@ -22,6 +22,41 @@ const gameListData = [
     },
 ]
 
+const channelsListData = [
+    {
+        url: "https://www.twitch.tv/alanzoka",
+        imageUrl: "https://static.wikia.nocookie.net/youtube/images/e/e7/Alanzoka.jpg", 
+        imageAlt: "Alanzoka Logo"
+    },
+    {
+        url: "https://www.youtube.com/@rocketseat",
+        imageUrl: "https://rocketseat.gallerycdn.vsassets.io/extensions/rocketseat/rocketseatreactjs/3.0.2/1588456824702/Microsoft.VisualStudio.Services.Icons.Default", 
+        imageAlt: "Rocketseat Logo"
+    },
+    {
+        url: "https://www.youtube.com/@ruriohama",
+        imageUrl: "https://yt3.googleusercontent.com/gw6BRWav3SyG39C2kmEM1VSb5ocjEWuKRBKPhRndqOKmAxj3rzB5OOVQKeE0751DJrPWJH7c=s900-c-k-c0x00ffffff-no-rj", 
+        imageAlt: "Ruri Ohama Logo"
+    },
+]
+
+const socialListData = [
+    {
+        url: "https://github.com/ythiago03",
+        imageUrl: "https://ythiago03-links.netlify.app/images/github.svg", 
+        imageAlt: "Github Logo"
+    },
+    {
+        url: "https://instagram.com/ythiago03",
+        imageUrl: "https://ythiago03-links.netlify.app/images/instagram.svg", 
+        imageAlt: "Instagram Logo"
+    },
+    {
+        url: "https://bit.ly/thiagofidencio",
+        imageUrl: "https://ythiago03-links.netlify.app/images/linkedin.svg", 
+        imageAlt: "Linkedin Logo"
+    },
+]
 
 export function App () {
     return(
@@ -29,23 +64,59 @@ export function App () {
             <Header />
 
             <main>
-                <Section title="Meus jogos" subTitle="Os games que eu mais curto jogar!" >
-                    {/* <ListItem href="https://osu.ppy.sh/home" src="https://static-cdn.jtvnw.net/ttv-boxart/21465_IGDB-272x380.jpg" alt="Osu! Logo" /> */}
-
+                <Section 
+                    className="games-list" 
+                    title="Meus jogos" 
+                    subTitle="Os games que eu mais curto jogar!" 
+                >
                     {
-                    gameListData.map(element => {
-                        return (
-                            <ListItem 
-                                href={element.url} 
-                                src={element.imageUrl} 
-                                alt={element.imageAlt} />
-                        )
-                    })}
+                        gameListData.map(element => {
+                            return (
+                                <ListItem 
+                                    href={element.url} 
+                                    src={element.imageUrl} 
+                                    alt={element.imageAlt} 
+                                />
+                            )
+                        })
+                    }
                 </Section>    
 
-                <Section title="Canais e Streamers" subTitle="Lista de canais e transmissões que não perco!" >
+                <Section 
+                    className="channel-list" 
+                    title="Canais e Streamers" 
+                    subTitle="Lista de canais e transmissões que não perco!" 
+                >
+                    {
+                        channelsListData.map(element => {
+                            return (
+                                <ListItem 
+                                    href={element.url} 
+                                    src={element.imageUrl} 
+                                    alt={element.imageAlt} 
+                                />
+                            )
+                        })
+                    }
+                </Section>   
 
-                </Section>        
+                <Section 
+                    className="social-list" 
+                    title="Minhas redes" 
+                    subTitle="Se conecte comigo agora mesmo!" 
+                >
+                    {
+                        socialListData.map(element => {
+                            return (
+                                <ListItem 
+                                    href={element.url} 
+                                    src={element.imageUrl} 
+                                    alt={element.imageAlt} 
+                                />
+                            )
+                        })
+                    }
+                </Section>   
             </main>
         </div>
     )
